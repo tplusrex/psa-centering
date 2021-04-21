@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 import logo from './psa-logo.png';
 import './App.css';
 
+function divider(first, second) {
+  if (first > 35 || second > 35) {
+    return divider(Math.floor((first / 2) < 1 ? 1 : (first / 2)), Math.floor((second / 2) < 1 ? 1 : (second / 2)));
+  }
+
+  return [first, second];
+}
+
 function App() {
   const [firstValue, setFirstValue] = useState(1);
   const [secondValue, setSecondValue] = useState(1);
@@ -44,6 +52,12 @@ function App() {
     [97, 95, 92, 90, 88, 85, 83, 81, 80, 78, 76, 74, 73, 71, 70, 69, 67, 66, 65, 64, 63, 61, 60, 59, 58, 57, 56, 56, 55, 54, 53, 52, 51, 51, 50]
   ];
 
+  let position = [firstValue, secondValue];
+
+  if (firstValue > 35 || secondValue > 35) {
+    position = divider(firstValue, secondValue);
+  }
+
   return (
     <div className="App">
       <main>
@@ -64,46 +78,52 @@ function App() {
         <section>
           {/* <h3>Centering: {(firstValue > 0 && secondValue > 0 && data[firstValue - 1][secondValue - 1]) && <span>{data[firstValue - 1][secondValue - 1]}</span>}</h3> */}
           <h3>Grade 
-            {data[firstValue - 1] && data[firstValue - 1][secondValue - 1] &&
+            {data[position[0] - 1] && data[position[0] - 1][position[1] - 1] &&
             <>              
-              {(data[firstValue - 1][secondValue - 1] >= 45 && data[firstValue - 1][secondValue - 1] <= 55) &&
+              {(data[position[0] - 1][position[1] - 1] >= 45 && data[position[0] - 1][position[1] - 1] <= 55) &&
                 <span>10</span>
               }
-              {((data[firstValue - 1][secondValue - 1] >= 56 
-              && data[firstValue - 1][secondValue - 1] <= 60)
-              || (data[firstValue - 1][secondValue - 1] <= 44
-              && data[firstValue - 1][secondValue - 1] >= 40)) &&
+              {((data[position[0] - 1][position[1] - 1] >= 56 
+              && data[position[0] - 1][position[1] - 1] <= 60)
+              || (data[position[0] - 1][position[1] - 1] <= 44
+              && data[position[0] - 1][position[1] - 1] >= 40)) &&
                 <span>9</span>
               }
-              {((data[firstValue - 1][secondValue - 1] >= 61 
-              && data[firstValue - 1][secondValue - 1] <= 66)
-              || (data[firstValue - 1][secondValue - 1] <= 39
-              && data[firstValue - 1][secondValue - 1] >= 34)) &&
+              {((data[position[0] - 1][position[1] - 1] >= 61 
+              && data[position[0] - 1][position[1] - 1] <= 66)
+              || (data[position[0] - 1][position[1] - 1] <= 39
+              && data[position[0] - 1][position[1] - 1] >= 34)) &&
                 <span>8</span>
               }
-              {((data[firstValue - 1][secondValue - 1] >= 67 
-              && data[firstValue - 1][secondValue - 1] <= 72)
-              || (data[firstValue - 1][secondValue - 1] <= 33
-              && data[firstValue - 1][secondValue - 1] >= 28)) &&
+              {((data[position[0] - 1][position[1] - 1] >= 67 
+              && data[position[0] - 1][position[1] - 1] <= 72)
+              || (data[position[0] - 1][position[1] - 1] <= 33
+              && data[position[0] - 1][position[1] - 1] >= 28)) &&
                 <span>7</span>
               }
-              {((data[firstValue - 1][secondValue - 1] >= 73 
-              && data[firstValue - 1][secondValue - 1] <= 79)
-              || (data[firstValue - 1][secondValue - 1] <= 27
-              && data[firstValue - 1][secondValue - 1] >= 21)) &&
+              {((data[position[0] - 1][position[1] - 1] >= 73 
+              && data[position[0] - 1][position[1] - 1] <= 79)
+              || (data[position[0] - 1][position[1] - 1] <= 27
+              && data[position[0] - 1][position[1] - 1] >= 21)) &&
                 <span>6</span>
               }
-              {((data[firstValue - 1][secondValue - 1] >= 80 
-              && data[firstValue - 1][secondValue - 1] <= 85)
-              || (data[firstValue - 1][secondValue - 1] <= 20
-              && data[firstValue - 1][secondValue - 1] >= 15)) &&
+              {((data[position[0] - 1][position[1] - 1] >= 80 
+              && data[position[0] - 1][position[1] - 1] <= 85)
+              || (data[position[0] - 1][position[1] - 1] <= 20
+              && data[position[0] - 1][position[1] - 1] >= 15)) &&
                 <span>5</span>
               }
-              {((data[firstValue - 1][secondValue - 1] >= 86 
-              && data[firstValue - 1][secondValue - 1] <= 90)
-              || (data[firstValue - 1][secondValue - 1] <= 14
-              && data[firstValue - 1][secondValue - 1] >= 10)) &&
-                <span>5</span>
+              {((data[position[0] - 1][position[1] - 1] >= 86 
+              && data[position[0] - 1][position[1] - 1] <= 90)
+              || (data[position[0] - 1][position[1] - 1] <= 14
+              && data[position[0] - 1][position[1] - 1] >= 10)) &&
+                <span>4</span>
+              }
+              {((data[position[0] - 1][position[1] - 1] >= 91 
+              && data[position[0] - 1][position[1] - 1] <= 97)
+              || (data[position[0] - 1][position[1] - 1] <= 9
+              && data[position[0] - 1][position[1] - 1] >= 0)) &&
+                <span>3</span>
               }
             </>
             }
