@@ -114,16 +114,10 @@ function App() {
                 <span>5</span>
               }
               {((data[position[0] - 1][position[1] - 1] >= 86 
-              && data[position[0] - 1][position[1] - 1] <= 90)
-              || (data[position[0] - 1][position[1] - 1] <= 14
-              && data[position[0] - 1][position[1] - 1] >= 10)) &&
-                <span>4</span>
-              }
-              {((data[position[0] - 1][position[1] - 1] >= 91 
               && data[position[0] - 1][position[1] - 1] <= 97)
-              || (data[position[0] - 1][position[1] - 1] <= 9
+              || (data[position[0] - 1][position[1] - 1] <= 14
               && data[position[0] - 1][position[1] - 1] >= 0)) &&
-                <span>3</span>
+                <span>4</span>
               }
             </>
             }
