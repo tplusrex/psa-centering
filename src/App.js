@@ -6,7 +6,7 @@ function App() {
   const [firstValue, setFirstValue] = useState(1);
   const [secondValue, setSecondValue] = useState(1);
 
-  let percent = Math.trunc((Math.min(firstValue, secondValue)/(firstValue + secondValue)) * 100);
+  let percent = Math.round((Math.min(firstValue, secondValue)/(firstValue + secondValue)) * 100);
 
   return (
     <div className="App">
