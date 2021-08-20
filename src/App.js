@@ -8,9 +8,6 @@ function App() {
 
   let percent = Math.round((Math.min(firstValue, secondValue)/(firstValue + secondValue)) * 100);
 
-  console.log((firstValue/(firstValue + secondValue) * 100).toFixed(2))
-  console.log((secondValue/(firstValue + secondValue) * 100).toFixed(2))
-
   return (
     <div className="App">
       <main>
