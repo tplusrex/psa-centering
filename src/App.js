@@ -19,11 +19,11 @@ function App() {
         </header>
         <form>
           <label>
-            Side A <input type="number" value={firstValue} onChange={e => e.target.value ? setFirstValue(parseInt(e.target.value)) : 0} />
+            Side A <input type="number" value={firstValue} onFocus={(e) => e.target.select()} onChange={e => e.target.value ? setFirstValue(parseInt(e.target.value)) : 0} />
             <span className="percent">{(firstValue/(firstValue + secondValue) * 100).toFixed(2)}&#37;</span>
           </label>
           <label>
-            Side B <input type="number" value={secondValue} onChange={e => e.target.value ? setSecondValue(parseInt(e.target.value)): 0} />
+            Side B <input type="number" value={secondValue} onFocus={(e) => e.target.select()} onChange={e => e.target.value ? setSecondValue(parseInt(e.target.value)): 0} />
             <span className="percent">{(secondValue/(firstValue + secondValue) * 100).toFixed(2)}&#37;</span>
           </label>
         </form>
