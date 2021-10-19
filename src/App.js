@@ -32,10 +32,10 @@ function App() {
             <>
               {percent >= 45 && <span>10</span>}
               {percent < 45 && percent >= 40 && <span>9</span>}
-              {percent < 40 && percent >= 34 && <span>8</span>}
-              {percent < 34 && percent >= 28 && <span>7</span>}
-              {percent < 28 && percent >= 21 && <span>6</span>}
-              {percent < 21 && percent >= 15 && <span>5</span>}
+              {percent < 40 && percent >= 35 && <span>8</span>}
+              {percent < 35 && percent >= 30 && <span>7</span>}
+              {percent < 30 && percent >= 20 && <span>6</span>}
+              {percent < 20 && percent >= 15 && <span>5</span>}
               {percent < 15 && <span>4</span>}
             </>
           </h3>
