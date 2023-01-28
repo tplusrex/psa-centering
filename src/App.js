@@ -6,12 +6,12 @@ function App() {
   const [firstValue, setFirstValue] = useState(1);
   const [secondValue, setSecondValue] = useState(1);
 
-  let percent = Math.round((Math.min(firstValue, secondValue)/(firstValue + secondValue)) * 100);
+  let percent = Math.ceil(((Math.max(firstValue, secondValue)/(firstValue + secondValue)) * 100).toFixed(2));
 
   return (
     <div className="App">
       <main>
-        <header className="App-header">
+        {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Centering Calculator
@@ -30,16 +30,16 @@ function App() {
         <section>
           <h3>Grade 
             <>
-              {percent >= 45 && <span>10</span>}
-              {percent < 45 && percent >= 40 && <span>9</span>}
-              {percent < 40 && percent >= 35 && <span>8</span>}
-              {percent < 35 && percent >= 30 && <span>7</span>}
-              {percent < 30 && percent >= 20 && <span>6</span>}
-              {percent < 20 && percent >= 15 && <span>5</span>}
-              {percent < 15 && <span>4</span>}
+              {percent >= 50 && percent <= 55 && <span>10</span>}
+              {percent >= 56 && percent <= 60 && <span>9</span>}
+              {percent >= 61 && percent <= 65 && <span>8</span>}
+              {percent >= 66 && percent <= 70 && <span>7</span>}
+              {percent >= 71 && percent <= 80 && <span>6</span>}
+              {percent >= 81 && percent <= 85 && <span>5</span>}
+              {percent > 85 && <span>4</span>}
             </>
           </h3>
-        </section>
+        </section> */}
       </main>
     </div>
   );
